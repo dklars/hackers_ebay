@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HackersFor index{% endblock %}
+
+{% block body %}
+    <h1>HackersFor index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Lien</th>
+                <th>Mail</th>
+                <th>Name</th>
+                <th>Nombre</th>
+                <th>Activated</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hackers_for in hackers_fors %}
+            <tr>
+                <td>{{ hackers_for.id }}</td>
+                <td>{{ hackers_for.linkType.domaineLink }}{{ hackers_for.name }}</td>
+                <td>{{ hackers_for.mail }}</td>
+                <td>{{ hackers_for.name }}</td>
+                <td>{{ hackers_for.nombre }}</td>
+                <td>{{ hackers_for.activated ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_hackers_for_show', {'id': hackers_for.id}) }}">show</a>
+                    <a href="{{ path('app_hackers_for_edit', {'id': hackers_for.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_hackers_for_new') }}">Create new</a>
+{% endblock %}

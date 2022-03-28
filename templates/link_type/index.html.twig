@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LinkType index{% endblock %}
+
+{% block body %}
+    <h1>LinkType index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>NameLink</th>
+                <th>DomaineLink</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for link_type in link_types %}
+            <tr>
+                <td>{{ link_type.id }}</td>
+                <td>{{ link_type.nameLink }}</td>
+                <td>{{ link_type.domaineLink }}</td>
+                <td>
+                    <a href="{{ path('app_link_type_show', {'id': link_type.id}) }}">show</a>
+                    <a href="{{ path('app_link_type_edit', {'id': link_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_link_type_new') }}">Create new</a>
+{% endblock %}

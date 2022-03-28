@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New HackersFor{% endblock %}
+
+{% block body %}
+    <h1>Create new HackersFor</h1>
+
+    {{ include('hackers_for/_form.html.twig') }}
+
+    <a href="{{ path('app_hackers_for_index') }}">back to list</a>
+{% endblock %}

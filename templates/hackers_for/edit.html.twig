@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit HackersFor{% endblock %}
+
+{% block body %}
+    <h1>Edit HackersFor</h1>
+
+    {{ include('hackers_for/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_hackers_for_index') }}">back to list</a>
+
+    {{ include('hackers_for/_delete_form.html.twig') }}
+{% endblock %}
