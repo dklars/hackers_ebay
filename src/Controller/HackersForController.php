@@ -30,7 +30,7 @@ class HackersForController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $type = "FACEBOOK";
+            $type = "EBAY";
             $linkType = $linkTypeRepository->findOneBy(["nameLink"=>$type]);
             $lastHackers = $hackersForRepository->findOneBy(["linkType"=>$linkType], ["id"=>"DESC"]);
             dump($lastHackers);
