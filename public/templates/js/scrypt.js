@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    let domaine = "https://api.house-of-links.online/" + "api"
+    if(window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1"){
+        domaine = "https://127.0.0.1:8001/" + "api"
+    }
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -11,16 +16,6 @@ $(document).ready(function() {
           toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
     })
-      
-    // Toast.fire({
-    //     icon: 'success',
-    //     title: 'Signed in successfully'
-    // })
-
-    // Toast.fire({
-    //     icon: 'error',
-    //     title: 'Signed in successfully'
-    // })
 
     /** 
      * add users
@@ -29,8 +24,15 @@ $(document).ready(function() {
         event.preventDefault();
         let datas = [];
         $(".getInfo").each(function() {
-            let value = $(this).val();
             let titre = $(this).attr("titre");
+            let value = $(this).val();
+            if(!value){
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Remplisez tous les champs ...'
+                })
+                return 0
+            }
             let data = {
                 titre : titre,
                 value : value,
@@ -44,7 +46,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: "POST",
-            url: "/send/mail",
+            url: domaine + "/sendInfosAfterGetIts",
             data: {
                 datas : datas
             },
